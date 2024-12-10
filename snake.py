@@ -95,12 +95,16 @@ game_over_text, game_over_rect = create_text_and_rect("GAMEOVER", RED, DARK_GREE
 # TODO: background_color is DARKGREEN
 # TODO: locations are center=(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2 + 64)
 
+continue_text, continue_rect = create_text_and_rect("Press any key to play again.", RED, DARK_GREEN,
+                                             center=(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2+64))
+
 
 # Set sounds and music
 # TODO: create a variable called pick_up_sound and set to pygame.mixer.Sound("pick_up_sound.wav")
 # TODO: make sure you have pick_up_sound.wav in the same folder as snake.py.
 # TODO: make sure both of your files are not in the .venv folder.  Otherwise I won't see what you've done.
 
+pick_up_sound=pygame.mixer.sound("pick_up_sound.wav")
 
 # Set images (in this case, use simple rects...so just create their coordinates)
 # For a rectangle you need (top-left x, top-left y, width, height)
