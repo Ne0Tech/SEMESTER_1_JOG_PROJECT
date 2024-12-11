@@ -55,7 +55,7 @@ continue_text, continue_rect = create_text_and_rect("Press any key to play again
 pick_up_sound=pygame.mixer.sound("pick_up_sound.wav")
 
 apple_coord=(500, 500, snake_size, snake_size)
-apple_rect=pygame.fraw.rect(display_surface, RED, apple_coord)
+apple_rect=pygame.draw.rect(display_surface, RED, apple_coord)
 
 head_coord=(head_x, head_y, snake_size, snake_size)
 head_rect=pygame.draw.rect(display_surface, GREEN, head_coord)
