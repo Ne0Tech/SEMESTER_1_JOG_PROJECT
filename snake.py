@@ -95,7 +95,7 @@ game_over_text, game_over_rect = create_text_and_rect("GAMEOVER", RED, DARK_GREE
 # TODO: background_color is DARKGREEN
 # TODO: locations are center=(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2 + 64)
 
-continue_text, continue_rect = create_text_and_rect("Press any key to play again.", RED, DARK_GREEN,
+continue_text, continue_rect = create_text_and_rect("Press any key to play again. ", RED, DARK_GREEN,
                                              center=(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2+64))
 
 
