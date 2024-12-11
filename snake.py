@@ -71,15 +71,14 @@ def move_snake(event):
     global snake_dx, snake_dy
     if event.type == pygame.KEYDOWN:
         key = event.key
-        # TODO: check if key is equal to pygame.K_LEFT
-            # TODO: if so set snake_dx to -1 * SNAKE_SIZE and snake_dy = 0
-        # TODO: check if key is equal to pygame.K_RIGHT
-            # TODO: if so set snake_dx to SNAKE_SIZE and snake_dy to 0
-        # TODO: check if key is equal to pygame.K_UP
-            # TODO: if so set snake_dx to 0 and snake_dy to -1 * SNAKE_SIZE
-        # TODO: check if key is equal to pygame.K_DOWN
-            # TODO: if so set snake_dx to 0 and snake_dy to SNAKE_SIZE
-    pass  # TODO: remove this pass when done
+            if key == pygame.K_LEFT:
+              snake_dx -= 1 * snake_size
+             snake_dy=0
+            if key == pygame.K_RIGHT:
+                snake_dx += 1 * snake_size
+            if key == pygame.K_UP:
+                snake_dx=0
+                snake_dy=-1 * snake_size
 
 
 def check_quit(event):
