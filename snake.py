@@ -132,8 +132,8 @@ def check_game_over():
     global body_coords
     global running
     global is_paused
-    if head_rect.left = -(), head_rect.right > WINDOW_WIDTH:
-    # TODO: if head_rect.left is negative or head_rect.right is greater than WINDOW_WIDTH or head_rect.top is negative or head_rect.bottom is greater than WINDOW_HEIGHT
+    if head_rect.left = -(head_rect.left), head_rect.right > WINDOW_WIDTH:
+    if head_rect.left < 0 or head_rect.right > WINDOW_WIDTH or head_rect.top < 0 or head_rect.bottom > WINDOW_HEIGHT:
     # or head_coord in body_coords
         display_surface.blit(game_over_text, game_over_rect)
     display_surface.blit(continue_text, continue_rect)
@@ -157,16 +157,13 @@ def check_collisions():
 
 def blit_hud():
     display_surface.blit(title_text, title_rect)
-    # TODO: call display_surface.blit(title_text, title_rect)
-    # TODO: call display_surface.blit(score_text, score_rect)
-    pass  # TODO: remove this pass when done.
+    display_surface.blit(score_text, score_rect)
 
 def blit_assets():
-    # TODO: for body in body_coords:
-        # TODO: call pygame.draw.rect(display_surface, DARKGREEN, body)
-    # TODO: set head_rect to pygame.draw.rect(display_surface, GREEN, head_coord)
-    # TODO: set apple_rect to pygame.draw.rect(display_surface, RED, apple_coord)
-    pass  # TODO: remove this pass when done.
+    for body in body_coords:
+        pygame.draw.rect(display_surface, DARK_GREEN, body)
+        head_rect == pygame.draw.rect(display_surface, GREEN, head_coord)
+        apple_rect == pygame.draw.rect(display_surface, RED, apple_coord)
 
 def update_display_and_tick_clock():
     pygame.display.update()
@@ -187,11 +184,10 @@ while running:
 
     # Update HUD
     score_text = font.render("Score: "+str(score), True, GREEN, DARK_RED)
-    # TODO: set score_text to font.render("Score: " + str(score), True, GREEN, DARKRED)
+    score_text = font.render("Score: "+str(score), True, DARK_RED)
 
     # Fill the surface
     display_surface.fill(WHITE)
-    # TODO: call display_surface.fill(WHITE)
 
     # Blit HUD
     blit_hud()
