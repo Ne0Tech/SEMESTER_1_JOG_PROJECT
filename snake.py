@@ -41,7 +41,11 @@ def create_text_and_rect(text, color, background_color, **locations):
 
     return text, rect
 
+<<<<<<< HEAD
+title_text, title_rect = create_text_and_rect("~~Snake~~", GREEN, DARK_RED,
+=======
 title_text, title_rect = create_text_and_rect("~~Snake~~", GREEN, DARKRED,
+>>>>>>> origin/master
                                              center=(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2))
 
 score_text, score_rect = create_text_and_rect("Score: "+str(score), GREEN, DARK_RED,
@@ -53,7 +57,7 @@ game_over_text, game_over_rect = create_text_and_rect("GAMEOVER", RED, DARK_GREE
 continue_text, continue_rect = create_text_and_rect("Press any key to play again.", RED, DARK_GREEN,
                                              center=(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2+64))
 
-pick_up_sound=pygame.mixer.sound("pick_up_sound.wav")
+pick_up_sound=pygame.mixer.play("pick_up_sound.wav")
 
 apple_coord=(500, 500, snake_size, snake_size)
 apple_rect=pygame.draw.rect(display_surface, RED, apple_coord)
@@ -72,12 +76,12 @@ def move_snake(event):
     global snake_dx, snake_dy
     if event.type == pygame.KEYDOWN:
         key = event.key
-            if key == pygame.K_LEFT:
-              snake_dx -= 1 * snake_size
+            if key == pygame.K_LEFT
+            snake_dx -= 1 * snake_size
              snake_dy=0
-            if key == pygame.K_RIGHT:
+                if key == pygame.K_RIGHT:
                 snake_dx += 1 * snake_size
-            if key == pygame.K_UP:
+                if key == pygame.K_UP:
                 snake_dx=0
                 snake_dy=-1 * snake_size
 
@@ -92,7 +96,11 @@ def check_events():
     global running
     for event in pygame.event.get():
         check_quit(event)
+<<<<<<< HEAD
+     move_snake(event)
+=======
      call move_snake(event)
+>>>>>>> origin/master
 
 def handle_snake():
     global body_coords
@@ -160,10 +168,18 @@ def blit_hud():
     display_surface.blit(score_text, score_rect)
 
 def blit_assets():
+<<<<<<< HEAD
+    global head_rect, apple_rect
+    for body in body_coords:
+        pygame.draw.rect(display_surface, DARK_GREEN, body)
+    head_rect = pygame.draw.rect(display_surface, GREEN, head_coord)
+    apple_rect = pygame.draw.rect(display_surface, RED, apple_coord)
+=======
     for body in body_coords:
         pygame.draw.rect(display_surface, DARK_GREEN, body)
         head_rect == pygame.draw.rect(display_surface, GREEN, head_coord)
         apple_rect == pygame.draw.rect(display_surface, RED, apple_coord)
+>>>>>>> origin/master
 
 def update_display_and_tick_clock():
     pygame.display.update()
